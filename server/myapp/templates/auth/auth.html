@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+</head>
+<body>
+    <h1>Authentication Form</h1>
+    <form method="post" action="/authenticate/">
+        {% csrf_token %}
+        <label for="identifier">Identifier:</label><br>
+        <input type="text" id="identifier" name="identifier" required><br><br>
+        <label for="secret_key">Secret Key:</label><br>
+        <input type="password" id="secret_key" name="secret_key" required><br><br>
+        <label for="key_info">Key Info:</label><br>
+        <textarea id="key_info" name="key_info" rows="5" cols="50" readonly>{{ key_info }}</textarea><br><br>
+        <input type="submit" value="Authenticate">
+    </form>
+</body>
+</html>
